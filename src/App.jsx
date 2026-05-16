@@ -21,7 +21,6 @@ export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  // تأثير التمرير لتغيير لون شريط التنقل
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
@@ -30,10 +29,8 @@ export default function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // دالة تحميل السيرة الذاتية بصيغة PDF حقيقية (ملف مرفوع في فولدر public)
   const handleDownloadCV = () => {
     const element = document.createElement("a");
-    // الرابط يشير إلى ملف الـ PDF داخل المجلد public
     element.href = "/Mohamed_Ahmed_CV.pdf";
     element.download = "Mohamed_Ahmed_CV.pdf"; 
     document.body.appendChild(element);
@@ -41,92 +38,88 @@ export default function App() {
     document.body.removeChild(element);
   };
 
-  // بيانات المشاريع مع إضافة روابط حقيقية لكل مشروع لتلبية متطلبات التكليف
   const projects = [
     {
       id: 1,
-      title: "منصة TourBuddy",
-      description: "منصة رقمية مخصصة لربط السياح بالمرشدين المحليين في مناطق محددة بمصر، شملت التخطيط التجاري والتقني بالكامل وتصميم تجربة المستخدم.",
+      title: "TourBuddy Platform",
+      description: "A digital platform designed to connect tourists with local guides in specific regions of Egypt, involving complete technical and business planning along with UI/UX design.",
       tech: ["Software Architecture", "UI/UX", "Figma", "React Native"],
-      role: "مطور ومخطط تقني",
+      role: "Developer & Technical Planner",
       github: "https://github.com/Mohammed0Ahmed0Mohammed/tourbuddy",
       live: "https://tourbuddy.vercel.app"
     },
     {
       id: 2,
       title: "Physio Clinic Management System",
-      description: "نظام سحابي متكامل لإدارة عيادات العلاج الطبيعي معتمد على تقنيات الواجهة الخلفية الحديثة لتنظيم المواعيد وبيانات المرضى.",
+      description: "A comprehensive cloud-based system for managing physiotherapy clinics, relying on modern backend technologies to organize appointments and patient data.",
       tech: ["React", "Supabase", "Cloud Databases", "Full-Stack"],
-      role: "مطور واجهات أمامية وخلفية (Full Stack)",
+      role: "Full Stack Developer",
       github: "https://github.com/Mohammed0Ahmed0Mohammed/physio-clinic-system",
       live: "https://physio-clinic.vercel.app"
     },
     {
       id: 3,
-      title: "وكيل ذكاء اصطناعي (AI Agent)",
-      description: "مشروع تقني لإنشاء وكيل ذكي تم تطويره ضمن بيئة عمل جماعية (Agile) بالتعاون مع فريق مكون من 6 مطورين.",
+      title: "AI Agent",
+      description: "A technical project to create an intelligent agent, developed in an Agile environment in collaboration with a team of 6 developers.",
       tech: ["Python", "Machine Learning", "Agile (Scrum)", "Git"],
-      role: "مطور ذكاء اصطناعي وعضو فريق",
+      role: "AI Developer & Team Member",
       github: "https://github.com/Mohammed0Ahmed0Mohammed/ai-agent-project"
     },
     {
       id: 4,
-      title: "نظام إدارة المهام (Task Management System)",
-      description: "تطبيق لتنظيم المهام يعتمد على قواعد البيانات المتكاملة، يهدف إلى تسهيل التخطيط وإدارة العمل اليومي بفعالية.",
+      title: "Task Management System",
+      description: "A task organization app relying on integrated databases, aimed at facilitating planning and managing daily work effectively.",
       tech: ["JavaScript", "HTML", "Java", "Database"],
-      role: "مطور برمجيات",
+      role: "Software Developer",
       github: "https://github.com/Mohammed0Ahmed0Mohammed/task-manager-system",
       live: "https://mohammed-task-manager.vercel.app"
     }
   ];
 
-  // بيانات المهارات مصنفة
   const skills = [
     { 
-      category: "تطوير البرمجيات والواجهات", 
+      category: "Software & UI Development", 
       icon: <Layout className="w-6 h-6 mb-2 text-emerald-400" />, 
       items: ["React Native", "JavaScript", "HTML", "Java", "Full-Stack Development", "Software Architecture"] 
     },
     { 
-      category: "الذكاء الاصطناعي (AI/ML)", 
+      category: "Artificial Intelligence (AI/ML)", 
       icon: <BrainCircuit className="w-6 h-6 mb-2 text-emerald-400" />, 
       items: ["Deep Learning", "VGG16 & VGG19", "AlexNet", "Data Preprocessing", "AI Agents"] 
     },
     { 
-      category: "الأنظمة المدمجة (Embedded)", 
+      category: "Embedded Systems", 
       icon: <Cpu className="w-6 h-6 mb-2 text-emerald-400" />, 
       items: ["Microcontrollers", "ATmega32 (Timer1)", "ESP32", "Sensors Integration", "Microchip Studio"] 
     },
     { 
-      category: "قواعد البيانات والأدوات", 
+      category: "Databases & Tools", 
       icon: <Database className="w-6 h-6 mb-2 text-emerald-400" />, 
       items: ["Supabase", "Git & GitHub", "CI/CD Pipelines", "CodeRabbit", "Figma", "Scrum/Agile"] 
     }
   ];
 
-  // الشهادات
   const certifications = [
-    { name: "AI Engineering Bootcamp", date: "يناير 2026" },
-    { name: "Arabic Agentic AI", date: "سبتمبر 2025" },
-    { name: "AI for Startups", date: "سبتمبر 2025" }
+    { name: "AI Engineering Bootcamp", date: "January 2026" },
+    { name: "Arabic Agentic AI", date: "September 2025" },
+    { name: "AI for Startups", date: "September 2025" }
   ];
 
-  // الأنشطة الطلابية والخبرات
   const activities = [
     {
-      year: "أبريل 2026",
-      title: "مشارك في GDG Hackathon",
-      description: "المشاركة في هاكاثون مكثف لمدة 4 أيام، تضمن حضور ورش عمل متقدمة حول أدوات الذكاء الاصطناعي وأنظمة التحكم في الإصدارات."
+      year: "April 2026",
+      title: "Participant in GDG Hackathon",
+      description: "Participated in an intensive 4-day hackathon, which included advanced workshops on artificial intelligence tools and version control systems."
     },
     {
-      year: "أكتوبر 2025",
-      title: "مشارك في Hack to Hire GenAI Hackathon",
-      description: "المشاركة في الفعالية التقنية الرائدة بالقاهرة لتطوير حلول برمجية مبتكرة تعتمد على الذكاء الاصطناعي التوليدي."
+      year: "October 2025",
+      title: "Participant in Hack to Hire GenAI Hackathon",
+      description: "Participated in a leading tech event in Cairo to develop innovative software solutions based on generative AI."
     },
     {
-      year: "مستمر",
-      title: "مقدم عروض تقنية (Tech Speaker)",
-      description: "إعداد وتقديم شروحات تقنية وأكاديمية متقدمة لزملاء الدراسة حول أطر العمل الرشيقة (Scrum) ونماذج نضج القدرات (CMMI)."
+      year: "Ongoing",
+      title: "Tech Speaker",
+      description: "Preparing and delivering advanced technical and academic presentations for classmates on Agile frameworks (Scrum) and Capability Maturity Models (CMMI)."
     }
   ];
 
@@ -139,81 +132,77 @@ export default function App() {
   };
 
   return (
-    <div dir="rtl" className="min-h-screen bg-slate-950 text-slate-200 font-sans selection:bg-emerald-500/30">
+    <div dir="ltr" className="min-h-screen bg-slate-950 text-slate-200 font-sans selection:bg-emerald-500/30">
       
-      {/* شريط التنقل (Navbar) */}
+      {/* Navbar */}
       <nav className={`fixed w-full z-50 transition-all duration-300 border-b border-transparent ${scrolled ? 'bg-slate-900/90 backdrop-blur-md border-slate-800 shadow-lg' : 'bg-transparent'}`}>
         <div className="container mx-auto px-6 lg:px-12 py-4 flex justify-between items-center">
           <div className="text-2xl font-bold bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent cursor-pointer" onClick={() => scrollToSection('home')}>
-            &lt;محمد علي /&gt;
+            &lt;Mohamed Ali /&gt;
           </div>
           
-          {/* قائمة سطح المكتب */}
           <div className="hidden md:flex items-center gap-6 lg:gap-8 font-medium text-sm lg:text-base">
-            <button onClick={() => scrollToSection('about')} className="hover:text-emerald-400 transition-colors">من أنا</button>
-            <button onClick={() => scrollToSection('projects')} className="hover:text-emerald-400 transition-colors">المشاريع</button>
-            <button onClick={() => scrollToSection('skills')} className="hover:text-emerald-400 transition-colors">المهارات</button>
-            <button onClick={() => scrollToSection('certs')} className="hover:text-emerald-400 transition-colors">الشهادات</button>
-            <button onClick={() => scrollToSection('experience')} className="hover:text-emerald-400 transition-colors">الأنشطة</button>
-            <button onClick={() => scrollToSection('contact')} className="hover:text-emerald-400 transition-colors">تواصل معي</button>
-            <button onClick={handleDownloadCV} className="flex items-center gap-2 bg-emerald-500/10 text-emerald-400 border border-emerald-500/50 px-4 py-2 rounded-lg hover:bg-emerald-500 hover:text-slate-950 transition-all duration-300 mr-2">
+            <button onClick={() => scrollToSection('about')} className="hover:text-emerald-400 transition-colors">About</button>
+            <button onClick={() => scrollToSection('projects')} className="hover:text-emerald-400 transition-colors">Projects</button>
+            <button onClick={() => scrollToSection('skills')} className="hover:text-emerald-400 transition-colors">Skills</button>
+            <button onClick={() => scrollToSection('certs')} className="hover:text-emerald-400 transition-colors">Certifications</button>
+            <button onClick={() => scrollToSection('experience')} className="hover:text-emerald-400 transition-colors">Experience</button>
+            <button onClick={() => scrollToSection('contact')} className="hover:text-emerald-400 transition-colors">Contact</button>
+            <button onClick={handleDownloadCV} className="flex items-center gap-2 bg-emerald-500/10 text-emerald-400 border border-emerald-500/50 px-4 py-2 rounded-lg hover:bg-emerald-500 hover:text-slate-950 transition-all duration-300 ml-2">
               <Download className="w-4 h-4" />
               CV
             </button>
           </div>
 
-          {/* زر قائمة الهاتف */}
           <button className="md:hidden text-slate-200 hover:text-emerald-400" onClick={() => setIsMenuOpen(!isMenuOpen)}>
             {isMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
           </button>
         </div>
 
-        {/* قائمة الهاتف المحمول */}
         {isMenuOpen && (
           <div className="md:hidden bg-slate-900 border-b border-slate-800 p-6 flex flex-col gap-4 absolute w-full shadow-2xl">
-            <button onClick={() => scrollToSection('about')} className="text-right text-lg hover:text-emerald-400">من أنا</button>
-            <button onClick={() => scrollToSection('projects')} className="text-right text-lg hover:text-emerald-400">المشاريع</button>
-            <button onClick={() => scrollToSection('skills')} className="text-right text-lg hover:text-emerald-400">المهارات</button>
-            <button onClick={() => scrollToSection('certs')} className="text-right text-lg hover:text-emerald-400">الشهادات</button>
-            <button onClick={() => scrollToSection('experience')} className="text-right text-lg hover:text-emerald-400">الأنشطة</button>
-            <button onClick={() => scrollToSection('contact')} className="text-right text-lg hover:text-emerald-400">تواصل معي</button>
+            <button onClick={() => scrollToSection('about')} className="text-left text-lg hover:text-emerald-400">About</button>
+            <button onClick={() => scrollToSection('projects')} className="text-left text-lg hover:text-emerald-400">Projects</button>
+            <button onClick={() => scrollToSection('skills')} className="text-left text-lg hover:text-emerald-400">Skills</button>
+            <button onClick={() => scrollToSection('certs')} className="text-left text-lg hover:text-emerald-400">Certifications</button>
+            <button onClick={() => scrollToSection('experience')} className="text-left text-lg hover:text-emerald-400">Experience</button>
+            <button onClick={() => scrollToSection('contact')} className="text-left text-lg hover:text-emerald-400">Contact</button>
             <button onClick={handleDownloadCV} className="flex justify-center items-center gap-2 bg-emerald-500 text-slate-950 px-4 py-3 rounded-lg font-bold mt-2">
               <Download className="w-5 h-5" />
-              حمل السيرة الذاتية
+              Download CV
             </button>
           </div>
         )}
       </nav>
 
       <main>
-        {/* قسم البداية والنبذة (Hero & About) */}
+        {/* Hero & About */}
         <section id="home" className="pt-32 pb-20 min-h-screen flex items-center relative overflow-hidden">
-          {/* تأثيرات خلفية */}
-          <div className="absolute top-20 right-0 w-72 h-72 bg-emerald-500/10 rounded-full blur-[100px] -z-10"></div>
-          <div className="absolute bottom-10 left-10 w-96 h-96 bg-cyan-500/10 rounded-full blur-[120px] -z-10"></div>
+          <div className="absolute top-20 left-0 w-72 h-72 bg-emerald-500/10 rounded-full blur-[100px] -z-10"></div>
+          <div className="absolute bottom-10 right-10 w-96 h-96 bg-cyan-500/10 rounded-full blur-[120px] -z-10"></div>
 
           <div className="container mx-auto px-6 lg:px-12 flex flex-col-reverse lg:flex-row items-center gap-12">
-            <div id="about" className="flex-1 text-center lg:text-right max-w-4xl">
+            <div id="about" className="flex-1 text-center lg:text-left max-w-4xl">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 mb-6 font-mono text-sm">
                 <Briefcase className="w-4 h-4" />
-                <span>طالب علوم وهندسة الحاسب - مصر</span>
+                <span>CS & Engineering Student - Egypt</span>
               </div>
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-slate-100 leading-tight">
-                محمد أحمد محمد علي
+                Mohamed Ahmed
               </h1>
               <h2 className="text-2xl md:text-4xl font-bold mb-8 text-slate-400">
-                مطور <span className="text-emerald-400">Full-Stack</span> ومهندس <span className="text-cyan-400">أنظمة ذكية</span>.
+                <span className="text-emerald-400">Full-Stack</span> Developer & <span className="text-cyan-400">Smart Systems</span> Engineer.
               </h2>
               <p className="text-lg md:text-xl text-slate-400 mb-10 leading-relaxed max-w-3xl lg:mx-0 mx-auto">
-                أجمع بين شغفي بهندسة البرمجيات، تطوير الهواتف الذكية وتطبيقات الويب، وبين خبرتي في الذكاء الاصطناعي (Deep Learning) والأنظمة المدمجة. أهدف دائماً إلى بناء معمارية برمجيات قوية وأنظمة متكاملة قابلة للتوسع وتلبي احتياجات المستخدمين بذكاء.
+                I combine my passion for software engineering, mobile and web development, with my expertise in Artificial Intelligence (Deep Learning) and Embedded Systems. I aim to build robust software architectures and integrated systems that are scalable and smartly meet user needs.
               </p>
               <div className="flex flex-wrap justify-center lg:justify-start gap-4">
                 <button onClick={() => scrollToSection('projects')} className="bg-emerald-500 text-slate-950 px-8 py-3 rounded-lg font-bold hover:bg-emerald-400 hover:-translate-y-1 transition-all duration-300">
-                  استكشف مشاريعي
+                  Explore Projects
                 </button>
                 <button onClick={handleDownloadCV} className="border border-slate-600 bg-slate-800/50 backdrop-blur-sm text-slate-200 px-8 py-3 rounded-lg font-bold hover:border-emerald-400 hover:text-emerald-400 hover:-translate-y-1 transition-all duration-300 flex items-center gap-2">
                   <Download className="w-5 h-5" />
-                  تحميل السيرة الذاتية (CV)
+                  Download CV
                 </button>
               </div>
             </div>
@@ -221,18 +210,17 @@ export default function App() {
             <div className="flex-1 flex justify-center relative">
               <div className="absolute inset-0 bg-emerald-500/20 blur-[100px] rounded-full w-3/4 h-3/4 m-auto"></div>
               <div className="w-64 h-64 lg:w-80 lg:h-80 relative z-10 border-4 border-slate-800 rounded-2xl overflow-hidden shadow-2xl hover:-translate-y-2 transition-all duration-500">
-                {/* إذا لم تكن الصورة موجودة، سيظهر مكانها فارغ أنيق، ولكن يفضل إضافة صورتك لاحقاً */}
-                <img src="/profile.jpg" alt="محمد أحمد" className="w-full h-full object-cover bg-slate-800" />
+                <img src="/profile.jpg" alt="Mohamed Ahmed" className="w-full h-full object-cover bg-slate-800" />
               </div>
             </div>
           </div>
         </section>
 
-        {/* قسم المشاريع (Projects) */}
+        {/* Projects */}
         <section id="projects" className="py-20 bg-slate-900/40 border-y border-slate-800/50">
           <div className="container mx-auto px-6 lg:px-12">
             <div className="flex items-center gap-4 mb-12">
-              <h2 className="text-3xl font-bold text-slate-100">أبرز المشاريع</h2>
+              <h2 className="text-3xl font-bold text-slate-100">Featured Projects</h2>
               <div className="h-px bg-slate-700 flex-1 max-w-xs"></div>
             </div>
             
@@ -247,12 +235,12 @@ export default function App() {
                     </div>
                     <div className="flex gap-4">
                       {project.github && (
-                        <a href={project.github} target="_blank" rel="noreferrer" className="text-slate-400 hover:text-emerald-400 transition-colors" title="رابط المستودع">
+                        <a href={project.github} target="_blank" rel="noreferrer" className="text-slate-400 hover:text-emerald-400 transition-colors" title="Repository Link">
                           <Github className="w-6 h-6" />
                         </a>
                       )}
                       {project.live && (
-                        <a href={project.live} target="_blank" rel="noreferrer" className="text-slate-400 hover:text-emerald-400 transition-colors" title="رابط العرض">
+                        <a href={project.live} target="_blank" rel="noreferrer" className="text-slate-400 hover:text-emerald-400 transition-colors" title="Live Link">
                           <ExternalLink className="w-6 h-6" />
                         </a>
                       )}
@@ -263,7 +251,7 @@ export default function App() {
                   <p className="text-slate-400 mb-6 flex-grow">{project.description}</p>
                   
                   <div className="mb-6 bg-slate-900/50 p-3 rounded-lg border border-slate-700/30">
-                    <p className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">المنصب/الدور:</p>
+                    <p className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Role:</p>
                     <p className="text-sm text-slate-300">{project.role}</p>
                   </div>
 
@@ -278,11 +266,11 @@ export default function App() {
           </div>
         </section>
 
-        {/* قسم المهارات (Skills) */}
+        {/* Skills */}
         <section id="skills" className="py-20">
           <div className="container mx-auto px-6 lg:px-12">
             <div className="flex items-center gap-4 mb-12">
-              <h2 className="text-3xl font-bold text-slate-100">المهارات التقنية</h2>
+              <h2 className="text-3xl font-bold text-slate-100">Technical Skills</h2>
               <div className="h-px bg-slate-700 flex-1 max-w-xs"></div>
             </div>
 
@@ -302,11 +290,11 @@ export default function App() {
           </div>
         </section>
 
-        {/* قسم الشهادات (Certifications) */}
+        {/* Certifications */}
         <section id="certs" className="py-16 bg-emerald-950/10 border-y border-emerald-900/20">
           <div className="container mx-auto px-6 lg:px-12">
             <div className="flex items-center gap-4 mb-10">
-              <h2 className="text-3xl font-bold text-slate-100">الشهادات المعتمدة</h2>
+              <h2 className="text-3xl font-bold text-slate-100">Certifications</h2>
               <div className="h-px bg-emerald-900/50 flex-1 max-w-xs"></div>
             </div>
 
@@ -326,19 +314,18 @@ export default function App() {
           </div>
         </section>
 
-        {/* قسم الأنشطة الطلابية والخبرات (Activities & Experience) */}
+        {/* Experience */}
         <section id="experience" className="py-20 bg-slate-900/30">
           <div className="container mx-auto px-6 lg:px-12">
             <div className="flex items-center gap-4 mb-16">
-              <h2 className="text-3xl font-bold text-slate-100">الأنشطة والفعاليات التقنية</h2>
+              <h2 className="text-3xl font-bold text-slate-100">Activities & Experience</h2>
               <div className="h-px bg-slate-700 flex-1 max-w-xs"></div>
             </div>
 
-            <div className="max-w-4xl mx-auto border-r-2 border-slate-800 pr-8 relative">
+            <div className="max-w-4xl mx-auto border-l-2 border-slate-800 pl-8 relative">
               {activities.map((activity, idx) => (
                 <div key={idx} className="mb-14 relative group">
-                  {/* نقطة التايم لاين */}
-                  <div className="absolute -right-[41px] top-1 w-5 h-5 bg-slate-950 border-4 border-emerald-500 rounded-full group-hover:bg-emerald-500 transition-colors duration-300 shadow-[0_0_10px_rgba(16,185,129,0.5)]"></div>
+                  <div className="absolute -left-[41px] top-1 w-5 h-5 bg-slate-950 border-4 border-emerald-500 rounded-full group-hover:bg-emerald-500 transition-colors duration-300 shadow-[0_0_10px_rgba(16,185,129,0.5)]"></div>
                   
                   <span className="inline-block bg-slate-800 text-emerald-400 font-mono text-xs px-3 py-1 rounded-full mb-3 border border-slate-700">{activity.year}</span>
                   <h3 className="text-xl font-bold text-slate-100 mb-3">{activity.title}</h3>
@@ -349,43 +336,40 @@ export default function App() {
           </div>
         </section>
 
-        {/* قسم التواصل (Contact) */}
+        {/* Contact */}
         <section id="contact" className="py-24 mb-10 text-center relative">
           <div className="absolute inset-0 bg-gradient-to-b from-transparent to-emerald-950/20 pointer-events-none"></div>
           <div className="container mx-auto px-6 lg:px-12 max-w-2xl relative z-10">
             <div className="inline-block p-4 bg-emerald-500/10 rounded-full text-emerald-400 mb-6">
               <Mail className="w-8 h-8" />
             </div>
-            <h2 className="text-4xl lg:text-5xl font-bold text-slate-100 mb-6">دعنا نتعاون معاً</h2>
+            <h2 className="text-4xl lg:text-5xl font-bold text-slate-100 mb-6">Let's Work Together</h2>
             <p className="text-slate-400 mb-10 leading-relaxed text-lg">
-              سواء كنت تبحث عن مطور شغوف للانضمام إلى فريقك، أو لديك فكرة مشروع ترغب في تنفيذها بأحدث التقنيات، صندوق بريدي مفتوح دائماً للتواصل!
+              Whether you are looking for a passionate developer to join your team or have a project idea you want to build with the latest technologies, my inbox is always open!
             </p>
             <a href="mailto:momammedahmed1m@gmail.com" className="inline-flex items-center gap-2 bg-emerald-500 text-slate-950 px-10 py-4 rounded-lg font-bold text-lg hover:bg-emerald-400 hover:shadow-[0_0_20px_rgba(16,185,129,0.4)] transition-all duration-300">
-              أرسل لي رسالة
+              Send Me a Message
             </a>
           </div>
         </section>
       </main>
 
-      {/* التذييل (Footer) */}
+      {/* Footer */}
       <footer className="py-10 text-center border-t border-slate-800 bg-slate-950">
-        <div className="flex justify-center gap-6 mb-6">
-          <a href="https://github.com/Mohammed0Ahmed0Mohammed" target="_blank" rel="noreferrer" className="text-slate-400 hover:text-emerald-400 transition-colors p-3 bg-slate-900 border border-slate-800 hover:border-emerald-500/50 rounded-full group" title="حساب GitHub">
+        <div className="flex justify-center gap-6">
+          <a href="https://github.com/Mohammed0Ahmed0Mohammed" target="_blank" rel="noreferrer" className="text-slate-400 hover:text-emerald-400 transition-colors p-3 bg-slate-900 border border-slate-800 hover:border-emerald-500/50 rounded-full group" title="GitHub">
             <Github className="w-6 h-6 group-hover:scale-110 transition-transform" />
           </a>
-          <a href="https://linkedin.com/in/mohammed-ahmed-dev" target="_blank" rel="noreferrer" className="text-slate-400 hover:text-emerald-400 transition-colors p-3 bg-slate-900 border border-slate-800 hover:border-emerald-500/50 rounded-full group" title="حساب LinkedIn">
+          <a href="https://linkedin.com/in/mohammed-ahmed-dev" target="_blank" rel="noreferrer" className="text-slate-400 hover:text-emerald-400 transition-colors p-3 bg-slate-900 border border-slate-800 hover:border-emerald-500/50 rounded-full group" title="LinkedIn">
             <Linkedin className="w-6 h-6 group-hover:scale-110 transition-transform" />
           </a>
-          <a href="mailto:momammedahmed1m@gmail.com" className="text-slate-400 hover:text-emerald-400 transition-colors p-3 bg-slate-900 border border-slate-800 hover:border-emerald-500/50 rounded-full group" title="إرسال بريد إلكتروني">
+          <a href="mailto:momammedahmed1m@gmail.com" className="text-slate-400 hover:text-emerald-400 transition-colors p-3 bg-slate-900 border border-slate-800 hover:border-emerald-500/50 rounded-full group" title="Email">
             <Mail className="w-6 h-6 group-hover:scale-110 transition-transform" />
           </a>
-          <a href="tel:01013374680" className="text-slate-400 hover:text-emerald-400 transition-colors p-3 bg-slate-900 border border-slate-800 hover:border-emerald-500/50 rounded-full group" title="اتصل بي: 01013374680">
+          <a href="tel:01013374680" className="text-slate-400 hover:text-emerald-400 transition-colors p-3 bg-slate-900 border border-slate-800 hover:border-emerald-500/50 rounded-full group" title="Phone">
             <Phone className="w-6 h-6 group-hover:scale-110 transition-transform" />
           </a>
         </div>
-        <p className="text-slate-500 font-mono text-sm">
-          تم التصميم والتطوير بواسطة <span className="text-emerald-400 font-bold">محمد أحمد محمد علي</span> &copy; 2024
-        </p>
       </footer>
 
     </div>
