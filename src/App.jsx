@@ -46,62 +46,62 @@ export default function App() {
       id: "swn",
       isGraduationProject: true,
       title: "SmartWholesale Network (SWN)",
-      subtitle: "3-Tier B2B Supply Chain Network & Asset-Light SaaS Platform",
+      subtitle: "3-Tier B2B Supply Chain Network & Asset-Light Mobile SaaS Platform",
       badge: "🎓 Graduation Project",
-      description: "A comprehensive digital supply chain network and asset-light B2B SaaS platform connecting suppliers, wholesalers, and retailers in a unified ecosystem with zero sales commissions and anti-monopoly protections.",
-      tech: ["React Native", "Node.js", "Express.js", "PostgreSQL", "React", "JWT Microservices"],
-      role: "Lead Architect & Mobile Developer",
+      description: "A comprehensive cross-platform mobile application connecting suppliers, wholesalers, and retailers in a unified mobile ecosystem with commission-free subscriptions and anti-monopoly protections.",
+      tech: ["React Native", "REST APIs", "JWT Auth", "State Management", "Mobile Architecture"],
+      role: "Lead Mobile Developer",
       details: [
-        "SmartWholesale Network (SWN) is an asset-light 3-tier B2B supply chain platform connecting suppliers, wholesalers, and retailers in a single cloud ecosystem.",
-        "Built with a commission-free flat-rate subscription engine, SWN eliminates transaction fees and ensures equitable access to wholesale products.",
-        "Features an innovative Automated Data Transfer Microservice that instantly mirrors supplier products to wholesaler catalogs without manual data entry.",
-        "Includes an intelligent Anti-Monopoly & Inventory Protection algorithm that prevents market cornering by setting order quantity caps and generating exception tickets.",
-        "Engineered with React Native mobile apps for seamless cross-platform management and a robust Node.js/PostgreSQL microservices backend."
+        "Architected and developed cross-platform React Native mobile applications connecting suppliers, wholesalers, and retailers in a single ecosystem.",
+        "Integrated subscription management workflows and authentication mechanisms ensuring seamless mobile access across all user tiers.",
+        "Consumed automated data transfer REST APIs to dynamically sync supplier product catalogs directly to wholesale storefronts.",
+        "Implemented client-side anti-monopoly validation logic and instant notification alerts to enforce order quantity caps on mobile orders.",
+        "Engineered responsive, high-performance mobile UI components with smooth navigation, state management, and offline handling."
       ]
     },
     {
       id: 1,
       title: "TourBuddy Platform",
       subtitle: "Tourism & Local Guide Connection Marketplace",
-      description: "A digital platform designed to connect tourists with verified local guides in specific regions of Egypt, involving complete technical and business planning along with UI/UX design.",
-      tech: ["React Native", "Software Architecture", "UI/UX", "Figma", "Firebase"],
+      description: "A digital mobile marketplace designed to connect tourists with verified local guides in Egypt, featuring interactive booking and intuitive mobile UX.",
+      tech: ["React Native", "Mobile Architecture", "UI/UX", "Figma", "Firebase"],
       role: "Mobile Developer & Technical Planner",
       details: [
         "TourBuddy is a specialized mobile marketplace connecting international and local tourists with certified local tour guides across Egypt.",
-        "Features real-time location tracking, interactive tour booking schedules, and integrated multi-currency payment processing.",
-        "Provides personalized itinerary recommendations driven by user preferences and authentic ratings from previous travelers.",
+        "Integrated real-time location services, interactive tour booking schedules, and mobile payment processing APIs.",
+        "Provides personalized itinerary recommendations driven by user preferences and authentic traveler reviews.",
         "Built using React Native for smooth cross-platform performance, featuring custom UI components prototyped in Figma.",
-        "Streamlines guide verification, booking management, and direct in-app messaging to enhance safety and user trust."
+        "Streamlines guide verification, booking management, and direct in-app messaging for mobile users."
       ]
     },
     {
       id: 2,
       title: "Physio Clinic Management System",
-      subtitle: "Cloud-Based Healthcare & Patient Records Platform",
-      description: "A comprehensive cloud-based system for managing physiotherapy clinics, relying on modern backend technologies to organize appointments and patient data.",
-      tech: ["React Native", "Supabase", "Cloud Databases", "Tailwind CSS"],
+      subtitle: "Mobile Healthcare & Patient Records Platform",
+      description: "A cross-platform mobile application for physical therapy clinics, integrating cloud backend services to manage appointments and patient data.",
+      tech: ["React Native", "Supabase Client", "REST APIs", "Tailwind CSS"],
       role: "Mobile Developer",
       details: [
         "Physio Clinic Management System is a cross-platform mobile application engineered for physical therapy practices and practitioners.",
-        "Simplifies patient onboarding, electronic medical record (EMR) management, treatment session tracking, and exercise prescription logging.",
-        "Includes an automated appointment scheduling engine with real-time push notifications and automated reminder alerts.",
-        "Leverages Supabase for real-time database synchronization, secure role-based access control, and encrypted patient file storage.",
-        "Delivers a mobile-first responsive interface allowing therapists to access patient records securely on iOS and Android devices."
+        "Simplifies patient onboarding, electronic medical record (EMR) management, treatment session tracking, and exercise logging on mobile devices.",
+        "Integrated automated appointment scheduling interfaces with push notifications and automated reminder alerts.",
+        "Leveraged Supabase client hooks for real-time data synchronization, role-based mobile access control, and secure file viewing.",
+        "Delivered a mobile-first responsive interface allowing therapists to access patient records securely on iOS and Android devices."
       ]
     },
     {
       id: 4,
       title: "Task Management System",
-      subtitle: "Productivity & Workflow Optimization App",
-      description: "A task organization app relying on integrated databases, aimed at facilitating planning and managing daily work effectively.",
-      tech: ["React Native", "JavaScript", "SQL Database", "AsyncStorage", "REST APIs"],
+      subtitle: "Productivity & Workflow Optimization Mobile App",
+      description: "A mobile task organization application integrating REST APIs and local storage to facilitate daily workflow management.",
+      tech: ["React Native", "JavaScript", "AsyncStorage", "REST APIs"],
       role: "React Native Mobile Developer",
       details: [
         "Task Management System is an intuitive mobile application designed to streamline personal and team productivity through structured task tracking.",
-        "Features dynamic project categorization, priority tagging, drag-and-drop workflow boards, and progress analytics visualization.",
-        "Implements real-time cloud data synchronization and offline caching to ensure uninterrupted productivity across mobile devices.",
-        "Offers customized notifications, deadline alerts, and collaborative task assignment capabilities for enhanced team coordination.",
-        "Built with scalable relational database architecture to handle complex query filtering, recurring tasks, and performance metrics."
+        "Features dynamic project categorization, priority tagging, interactive workflow boards, and progress analytics visualization.",
+        "Implemented local offline caching using AsyncStorage with automated cloud synchronization via REST APIs upon network reconnection.",
+        "Offers customized push notifications, deadline alerts, and collaborative task assignment capabilities for mobile users.",
+        "Built with clean modular state architecture to handle complex query filtering, recurring tasks, and performance metrics."
       ]
     }
   ];
@@ -129,9 +129,9 @@ export default function App() {
       items: ["Deep Learning", "VGG16 & VGG19", "AlexNet", "Data Preprocessing", "AI Agents"] 
     },
     { 
-      category: "Databases & Tools", 
+      category: "Backend Integration & Tools", 
       icon: <Database className="w-6 h-6 mb-2 text-emerald-400" />, 
-      items: ["Supabase", "Git & GitHub", "CI/CD Pipelines", "CodeRabbit", "Figma", "Scrum/Agile"] 
+      items: ["REST APIs", "JWT Auth", "Supabase Client", "Firebase", "Git & GitHub", "CI/CD Pipelines", "Figma", "Scrum/Agile"] 
     }
   ];
 

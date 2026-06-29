@@ -93,8 +93,8 @@ def generate_world_class_cv():
     summary = (
         "Accomplished Computer Science & Engineering student and specialized React Native Mobile Developer based in Luxor, Egypt. "
         "Demonstrated expertise in architecting and delivering high-performance, cross-platform mobile applications for iOS and Android. "
-        "Adept at transforming complex business requirements into clean, maintainable code structures utilizing modern state management, "
-        "REST/JWT APIs, cloud synchronization, and responsive UI design principles."
+        "Adept at transforming complex business requirements into clean, maintainable mobile architecture utilizing modern state management, "
+        "RESTful API integration, JWT authentication, cloud synchronization, and responsive UI design principles."
     )
     y = add_wrapped(summary, margin, y, width - (2 * margin))
     y -= 10
@@ -103,11 +103,11 @@ def generate_world_class_cv():
     y = add_section("Technical Core Competencies", y)
     
     skills_data = [
-        ("Mobile Development", "React Native, Mobile Architecture, Cross-Platform UI, Component Lifecycle, AsyncStorage"),
+        ("Mobile & UI Development", "React Native, Mobile Architecture, Cross-Platform UI, Component Lifecycle, AsyncStorage"),
         ("Programming Languages", "JavaScript (ES6+), Java, C / C++, Python, HTML5, CSS3"),
-        ("CS & Architecture", "OOP, Data Structures & Algorithms, Clean Architecture, Design Patterns, RESTful APIs"),
-        ("Backend & Cloud", "Supabase, Node.js, Express.js, PostgreSQL, Cloud Databases, Real-Time Sync"),
-        ("Tools & Workflows", "Git & GitHub, CI/CD Pipelines, CodeRabbit, Figma, Scrum / Agile Methodologies")
+        ("CS & Architecture", "OOP, Data Structures & Algorithms, Clean Architecture, Design Patterns"),
+        ("Backend Integration & Cloud", "REST APIs, JWT Auth, Supabase Client, Firebase, Real-Time Data Sync"),
+        ("AI / ML & Tools", "Deep Learning, VGG16/19, Git & GitHub, CI/CD, Figma, Scrum / Agile")
     ]
     
     for category, items in skills_data:
@@ -127,42 +127,43 @@ def generate_world_class_cv():
     projects = [
         {
             "name": "SmartWholesale Network (SWN)",
-            "badge": "Graduation Project — Lead Architect & Mobile Developer",
-            "tech": "React Native, Node.js, Express.js, PostgreSQL, JWT Microservices",
+            "badge": "Graduation Project — Lead Mobile Developer",
+            "tech": "React Native, REST APIs, JWT Auth, State Management, Mobile Architecture",
             "bullets": [
-                "Architected a 3-tier B2B digital supply chain network connecting suppliers, wholesalers, and retailers in a unified ecosystem.",
-                "Engineered a commission-free flat-rate subscription engine eliminating transaction fees across multi-tier user accounts.",
-                "Developed an Automated Data Transfer Microservice to instantly mirror supplier catalogs to wholesale storefronts.",
-                "Designed an Anti-Monopoly & Inventory Protection algorithm enforcing order caps and automated exception ticketing."
+                "Architected and developed cross-platform React Native mobile applications connecting suppliers, wholesalers, and retailers in a unified ecosystem.",
+                "Integrated subscription management workflows and authentication mechanisms ensuring seamless mobile access across all user tiers.",
+                "Consumed automated data transfer REST APIs to dynamically sync supplier product catalogs directly to wholesale storefronts.",
+                "Implemented client-side anti-monopoly validation logic and instant notification alerts to enforce order caps on mobile orders.",
+                "Engineered responsive, high-performance mobile UI components with smooth navigation and offline data handling."
             ]
         },
         {
             "name": "TourBuddy Platform",
             "badge": "Mobile Developer & Technical Planner",
-            "tech": "React Native, Firebase, UI/UX Design, Figma, REST APIs",
+            "tech": "React Native, Mobile Architecture, UI/UX, Figma, Firebase, REST APIs",
             "bullets": [
-                "Built a cross-platform tourism marketplace linking international tourists with verified local guides across Egypt.",
-                "Integrated real-time location services, interactive tour booking schedules, and multi-currency payment handling.",
-                "Crafted custom responsive mobile components prototyped in Figma to deliver high-performance user interfaces."
+                "Built a specialized mobile marketplace connecting international and local tourists with certified tour guides across Egypt.",
+                "Integrated real-time location services, interactive tour booking schedules, and mobile payment processing APIs.",
+                "Crafted custom responsive mobile components prototyped in Figma for optimal performance on iOS and Android."
             ]
         },
         {
             "name": "Physio Clinic Management System",
-            "badge": "Mobile App Developer",
-            "tech": "React Native, Supabase, Cloud Databases, Tailwind CSS",
+            "badge": "Mobile Developer",
+            "tech": "React Native, Supabase Client, REST APIs, Tailwind CSS",
             "bullets": [
-                "Developed a cloud-connected healthcare mobile management application for physical therapy practices.",
-                "Implemented secure Electronic Medical Records (EMR) tracking, treatment session logs, and automated appointment alerts.",
-                "Utilized Supabase for real-time data synchronization and encrypted role-based access control."
+                "Engineered a cross-platform mobile application for physical therapy clinics and healthcare practitioners.",
+                "Implemented Electronic Medical Records (EMR) tracking, treatment session logs, and automated appointment scheduling.",
+                "Leveraged Supabase client hooks for real-time data synchronization, role-based mobile access control, and encrypted file viewing."
             ]
         },
         {
             "name": "Task Management System",
-            "badge": "React Native Developer",
-            "tech": "React Native, JavaScript, SQL Database, AsyncStorage, REST APIs",
+            "badge": "React Native Mobile Developer",
+            "tech": "React Native, JavaScript, AsyncStorage, REST APIs",
             "bullets": [
-                "Designed an intuitive productivity app featuring dynamic project categorization, priority tagging, and workflow boards.",
-                "Implemented offline data caching via AsyncStorage with automatic cloud synchronization upon connection."
+                "Designed an intuitive mobile productivity app featuring dynamic project categorization, priority tagging, and workflow boards.",
+                "Implemented local offline caching using AsyncStorage with automated cloud synchronization via REST APIs upon reconnection."
             ]
         }
     ]
